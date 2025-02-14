@@ -258,7 +258,7 @@ val_data_vgg = val_datagen_vgg.flow_from_directory(
 history_vgg = vgg16_model.fit(
     train_data_vgg,
     validation_data=val_data_vgg,
-    epochs=30,  # Peut être augmenté si nécessaire
+    epochs=100,  # Peut être augmenté si nécessaire
     validation_steps=val_data.samples // val_data.batch_size,
     callbacks=[lr_decay, early_stopping]
 )
@@ -316,7 +316,7 @@ val_data_res = val_datagen_res.flow_from_directory(
 history_res = resnet50_model.fit(
     train_data_res,
     validation_data=val_data_res,
-    epochs=30,
+    epochs=100,
     validation_steps=val_data_res.samples // val_data_res.batch_size,
     callbacks=[lr_decay, early_stopping]
 )
